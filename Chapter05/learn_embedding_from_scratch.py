@@ -9,9 +9,6 @@ from sklearn.model_selection import train_test_split
 import collections
 import nltk
 import numpy as np
-from make_tensorboard import make_tensorboard
-import codecs
-
 
 np.random.seed(42)
 
@@ -85,12 +82,9 @@ model.add(Dense(2, activation="softmax"))
 model.compile(optimizer="adam", loss="categorical_crossentropy",
               metrics=["accuracy"])
 
-tensorboard, _ = make_tensorboard(
-    set_dir_name='keras_learn_embedding_from_scratch')
 
 history = model.fit(Xtrain, Ytrain, batch_size=BATCH_SIZE,
                     epochs=NUM_EPOCHS,
-                    callbacks=[tensorboard],
                     validation_data=(Xtest, Ytest))
 
 # evaluate model
