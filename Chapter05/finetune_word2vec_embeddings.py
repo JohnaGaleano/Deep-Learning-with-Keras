@@ -8,7 +8,6 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.utils import np_utils
 from sklearn.model_selection import train_test_split
 import collections
-from make_tensorboard import make_tensorboard
 import nltk
 import numpy as np
 import codecs
@@ -86,7 +85,6 @@ tensorboard, log_dir = make_tensorboard(
 
 history = model.fit(Xtrain, Ytrain, batch_size=BATCH_SIZE,
                     epochs=NUM_EPOCHS,
-                    callbacks=[tensorboard],
                     validation_data=(Xtest, Ytest))
 
 # evaluate model
