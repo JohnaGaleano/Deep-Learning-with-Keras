@@ -55,7 +55,7 @@ vocab_sz = len(word2index) + 1
 index2word = {v: k for k, v in word2index.items()}
 
 xs, ys = [], []
-fin = codecs.open(INPUT_FILE, "r", encoding='utf-8')
+fin = open(INPUT_FILE, "rb")
 for line in fin:
     label, sent = line.strip().split("\t")
     ys.append(int(label))
