@@ -80,8 +80,6 @@ model.add(Dense(2, activation="softmax"))
 
 model.compile(optimizer="adam", loss="categorical_crossentropy",
               metrics=["accuracy"])
-tensorboard, log_dir = make_tensorboard(
-    set_dir_name='keras_finetune_word2vec_embeddings')
 
 history = model.fit(Xtrain, Ytrain, batch_size=BATCH_SIZE,
                     epochs=NUM_EPOCHS,
